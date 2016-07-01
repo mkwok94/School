@@ -2,6 +2,9 @@
 #include <cstdlib>
 #include <iostream>
 
+// Hi Melinda! I'm modifying your code. You can pull this change to your computer 
+// Once I push this change to GitHub, you can pull it down to your own computer!
+
 using namespace std; 
 
 int main()
