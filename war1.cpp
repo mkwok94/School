@@ -2,76 +2,101 @@
 #include <cstdlib>
 #include <iostream>
 
-// Hi Melinda! I'm modifying your code. You can pull this change to your computer 
-// Once I push this change to GitHub, you can pull it down to your own computer!
-
-
 using namespace std; 
 
-int main()
-{
-srand(time(0));
+int main() {
+  srand(time(0));
 
-int cSuit;
-int cCard;
-int cHand;
+  int cSuit;
+  int cCard;
 
-int hSuit;
-int hCard;
-int hHand;
+  int hSuit;
+  int hCard;
+  
 
-cSuit = (rand() % 4);
-cCard = 2 +(rand() % 14);
-cHand = cSuit + cCard;
+  cSuit = (rand() % 4);
+  cCard = 2 +(rand() % 13); 
 
-hSuit = (rand() % 4);
-hCard = 2 +(rand() % 14);
-hHand = hSuit + hCard;
 
-	if (cSuit == 0)
-		cout << "Spades";
-	if (cSuit == 1)
-		cout << "Diamonds";
-	if (cSuit == 2)
-		cout << "Hearts";
-	if (cSuit == 3)
-		cout << "Clubs";
+  hSuit = (rand() % 4);
+  hCard = 2 +(rand() % 13);
 
-	if (hSuit == 0)
-		cout << "Spades";
-	if (hSuit == 1)
-		cout << "Diamonds";
-	if (hSuit == 2)
-		cout << "Hearts";
-	if (hSuit == 3)
-		cout << "Clubs";
+  
+  // COMPUTER HAND
+  
+  cout << "Computer has ";
+  
+  if (cCard == 11)
+    cout << "Jack of ";
+  
+  if (cCard == 12)
+    cout << "Queen of ";
+    
+  if (cCard == 13)
+    cout << "King of ";
+  
+  if (cCard ==14)
+    cout << "Ace of ";
+  
+  if (cCard < 11)
+    cout << cCard << " of ";
+  
+  
 
-	if (cCard == 14)
-		cout << "Ace";
-	if (cCard == 13)
-		cout << "King";
-	if (cCard == 12)
-		cout << "Queen";
-	if (cCard == 11)
-		cout << "Jack";
+  if (cSuit == 0)
+    cout << "Spades.\n\n";
 
-	if (hCard == 14)
-		cout << "Ace";
-	if (hCard == 13)
-		cout << "King";
-	if (hCard == 12)
-		cout << "Queen";
-	if (hCard == 11)
-		cout << "Jack";
+  if (cSuit == 1)
+    cout << "Diamonds.\n\n";
 
-	if (cHand == hHand)
-	cout << "It's a draw!" << endl;
-	
-	if (cHand > hHand)
-	cout << "Computer wins!" << endl;
-	
-	if (cHand < hHand)
-	cout << "You win!" << endl;
-	
+  if (cSuit == 2)
+    cout << "Hearts.\n\n";
+
+  if (cSuit == 3)
+    cout << "Clubs.\n\n";
+  
+  // HUMAN HAND
+  
+  cout << "You have ";
+  
+  if (hCard == 11)
+    cout << "Jack of ";
+  
+  if (hCard == 12)
+    cout << "Queen of ";
+  
+  if (hCard == 13)
+    cout << "King of ";
+  
+  if (hCard == 14)
+    cout << "Ace of ";
+  
+  if (hCard < 11)
+    cout << hCard << " of ";
+  
+  
+  if (hSuit == 0)
+    cout << "Spades.\n\n";
+
+  if (hSuit == 1)
+    cout << "Diamonds.\n\n";
+
+  if (hSuit == 2)
+    cout << "Hearts.\n\n";
+  
+  if (hSuit == 3) 
+    cout << "Clubs.\n\n";
+  
+  
+
+
+  if (cCard == hCard)
+    cout << "It's a draw!" << endl;
+
+  if (cCard > hCard)
+    cout << "Computer wins!" << endl;
+
+  if (cCard < hCard)
+    cout << "You win!" << endl;
 
 }
