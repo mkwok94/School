@@ -37,7 +37,7 @@ int main()
 		int isPasswordRight;
 		isPasswordRight = getPassword();
 		
-		while (true)
+
 			if (isPasswordRight == 1) 
 			{
 				return -1;
