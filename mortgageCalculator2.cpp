@@ -27,7 +27,7 @@ int getPassword()
 		i = i + 1;
 	} // while 
 	
-	return 1;
+return 1;
 } // getPassword 
 
 
