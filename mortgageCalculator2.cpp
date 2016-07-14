@@ -3,7 +3,7 @@
 #include <cmath>
 using namespace std; 
 
-void getPassword() 
+int getPassword() 
 { 
 	int i;
 	i = 0;
@@ -21,6 +21,8 @@ void getPassword()
 		
 		i = i + 1;
 	} // while 
+	
+	return i;
 } // getPassword 
 
 
