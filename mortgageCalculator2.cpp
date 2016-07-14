@@ -26,11 +26,6 @@ int getPassword()
 		}
 		
 		i = i + 1;
-	
-		if (i == 3)
-		{
-			break;
-		}
 	} // while 
 
 } // getPassword 
@@ -45,7 +40,7 @@ int main()
 		while (true)
 			if (isPasswordRight == 1) 
 			{
-				return 1;
+				return -1;
 			}
 			
 			if (isPasswordRight == 0)
