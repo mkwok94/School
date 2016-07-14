@@ -22,7 +22,7 @@ int getPassword()
 		i = i + 1;
 	} // while 
 	
-	return i;
+	return 1;
 } // getPassword 
 
 
