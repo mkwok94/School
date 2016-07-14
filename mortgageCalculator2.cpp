@@ -22,12 +22,17 @@ int getPassword()
 		else
 		{
 			cout << "INVALID. \n\n"; 
+			return 1;
 		}
 		
 		i = i + 1;
-	} // while 
 	
-	return 1;
+		if (i == 3)
+		{
+			break;
+		}
+	} // while 
+
 } // getPassword 
 
 
@@ -37,9 +42,10 @@ int main()
 		int isPasswordRight;
 		isPasswordRight = getPassword();
 		
+		while (true)
 			if (isPasswordRight == 1) 
 			{
-				break;
+				return 1;
 			}
 			
 			if (isPasswordRight == 0)
