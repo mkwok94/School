@@ -14,10 +14,15 @@ int getPassword()
 		cout << "Enter the password: "; 
 		getline(cin, password); 
   
-		if(password.compare("12345")) return 0; 
+		if(password.compare("12345")) 
+		{
+			return 0; 
+		}	
 			
 		else
+		{
 			cout << "INVALID. \n\n"; 
+		}
 		
 		i = i + 1;
 	} // while 
@@ -32,7 +37,10 @@ int main()
 		int isPasswordRight;
 		isPasswordRight = getPassword();
 		
-			if (isPasswordRight == 1) break;
+			if (isPasswordRight == 1) 
+			{
+				break;
+			}
 			
 			if (isPasswordRight == 0)
 			{
