@@ -14,7 +14,7 @@ int getPassword()
 		cout << "Enter the password: "; 
 		getline(cin, password); 
   
-		if (password == "12345") return 0; 
+		if(password.compare("12345")) return 0; 
 			
 		else
 			cout << "INVALID. \n\n"; 
