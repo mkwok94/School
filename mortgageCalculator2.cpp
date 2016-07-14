@@ -22,12 +22,12 @@ int getPassword()
 		else
 		{
 			cout << "INVALID. \n\n"; 
-			return 1;
 		}
 		
 		i = i + 1;
 	} // while 
-
+	
+	return 1;
 } // getPassword 
 
 
