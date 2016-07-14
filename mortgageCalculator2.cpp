@@ -29,33 +29,40 @@ int getPassword()
   
 int main() 
 	{
-
-		int borrowed;
-		double rate; 	
+		int isPasswordRight;
+		isPasswordRight = getPassword();
 		
-		cout << endl;
-		cout << endl;
-		cout << "What's the amount borrowed: ";
-		cin >> borrowed;
+			if (isPasswordRight == 1) break;
+			
+			if (isPasswordRight == 0)
+			{
+			
+				int borrowed;
+				double rate; 	
+		
+				cout << endl;
+				cout << endl;
+				cout << "What's the amount borrowed: ";
+				cin >> borrowed;
 
 	
-		cout << "What's the annual interest rate: ";
-		cin >> rate;
-		cout << endl;
-		cout << endl;
+				cout << "What's the annual interest rate: ";
+				cin >> rate;
+				cout << endl;
+				cout << endl;
 	
-		double mortgage;
-		double r = (rate/100) / 12;
-		int payback = 30;
-		int n = payback * 12;
+				double mortgage;
+				double r = (rate/100) / 12;
+				int payback = 30;
+				int n = payback * 12;
 	
-		mortgage = (borrowed * pow(1+r, n) * r)/( pow(1+r, n) - 1);
+				mortgage = (borrowed * pow(1+r, n) * r)/( pow(1+r, n) - 1);
 	
-		cout << "Amount borrowed: " << borrowed << endl;
-		cout << "Annual interest rate: " << rate << endl;
-		cout << "Payback period: " << payback << " years" << endl;
-		cout << "Monthly payback: $" << mortgage << endl;
+				cout << "Amount borrowed: " << borrowed << endl;
+				cout << "Annual interest rate: " << rate << endl;
+				cout << "Payback period: " << payback << " years" << endl;
+				cout << "Monthly payback: $" << mortgage << endl;
 	
-
+			}
 	
 	}
