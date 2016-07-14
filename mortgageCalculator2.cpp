@@ -6,8 +6,9 @@ using namespace std;
 void getPassword() 
 { 
 	int i;
+	i = 0;
 
-	for (i = 0; i != 3, i++;)
+	while (i != 3)
 	{ 
 		string password; 
 		cout << "Enter the password: "; 
@@ -18,6 +19,7 @@ void getPassword()
 		else
 			cout << "INVALID. \n\n"; 
 		
+		i = i + 1;
 	} // while 
 } // getPassword 
 
