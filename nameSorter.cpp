@@ -27,41 +27,39 @@ int main()
 	
 	//Reading File
 	
-	int i;	
 	while(fin.good())
 		{ 
-			string aName;
-			getline(fin, aName);			
+			string aNames;
+			getline(fin, aNames);			
 		
 			string readFile;
+			int i = 0;
 		
-			bool validation = false;
-			for (i = 0; i < readFile.size() ;i++)
+			bool validation = true;
+			if (nNames == MAX_Names) //If hits Max --> break
 				{
-					if (name[i] != aName && name[i] != "")
-						{
-							validation = true;
-						}
-				
+					break;
 				}
-			if (aName.length() == 0) //Ignore Blank Lines
+			
+			for (i < nNames; i++;) //If Name is same --> false
 				{
-					name[nNames] = aName;
-				} 
-				
-			for (i = 0;  i < nNames; i++) // If Whitespace
-				{  
-					if (aName == name[i])
+					if (aNames == name[i])
 						{
-							name[nNames--] = aName;
+							validation = false;
 						}
+				}
+				
+			if (aNames == "") //Ignore Blank Lines
+				{
+					validation = false;
 				} 
 				
-										
-			if (nNames < MAX_Names) //Nubmer of names to max
+			if (validation == true) //If true --> Print names
 				{
-					name[nNames++] = aName;
-				}		
+					name[nNames] = aNames;
+					nNames++;
+				}				
+
 		}// End While
 		
 	fin.close();	
@@ -69,7 +67,7 @@ int main()
 	
 	sort (name, name + MAX_Names);
 	
-	for (i = 0; i < MAX_Names; i++)
+	for (int i = 0; i < MAX_Names; i++)
 		{
 			cout << name[i] << endl;
 		}
