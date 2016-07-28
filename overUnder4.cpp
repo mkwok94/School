@@ -25,7 +25,8 @@ int main()
 	Awnser = 1 + (rand() % 10);
 	
 	//Empty List
-	Guess* start = 0;
+	struct Guess* start;
+	start->value=0;
 	
 	cout << "Hey, I'm trying to think of a number between 1-10! Try and guess what it is: ";
 	
