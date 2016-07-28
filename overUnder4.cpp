@@ -57,13 +57,13 @@ int main()
 		} // For
 		
 		//Anwser too high
-		if (aGuess->value > a)
+		if (aGuess->value > Awnser)
 			{
 				cout << "Boo, too high. Try again. ";
 			}
 		
 		//Answer too low
-		if (aGuess->value < a)
+		if (aGuess->value < Awnser)
 			{
 				cout << "Awe, too low. Try again. ";
 			}
