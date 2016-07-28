@@ -45,15 +45,12 @@ int main()
 			
 			for (i < nNames; i++;) //If Name is same --> false
 				{
-					if (aname == name[i])
-						{
-							validation = false;
-						}
-					
-					if (validation == true)
-						{
-							break;
-						}
+				
+					if(aname.compare(name[i]) == 0) 
+					{
+						validation = false;
+						break;
+					}
 				}
 			
 				
