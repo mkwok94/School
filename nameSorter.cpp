@@ -1,10 +1,10 @@
 #include <algorithm>
+#include <cctype>
 #include <fstream>
 #include <iostream>
 #include <string>
 
 using namespace std;
-
 
 int main()
 {
@@ -35,6 +35,8 @@ int main()
 			string readFile;
 			int i = 0;
 		
+			string aname = aNames;
+
 			bool validation = true;
 			if (nNames == MAX_Names) //If hits Max --> break
 				{
@@ -43,11 +45,17 @@ int main()
 			
 			for (i < nNames; i++;) //If Name is same --> false
 				{
-					if (aNames == name[i])
+					if (aname == name[i])
 						{
 							validation = false;
 						}
+					
+					if (validation == true)
+						{
+							break;
+						}
 				}
+			
 				
 			if (aNames == "") //Ignore Blank Lines
 				{
@@ -69,6 +77,6 @@ int main()
 	
 	for (int i = 0; i < MAX_Names; i++)
 		{
-			cout << name[i] << endl;
+			cout << i+1<< ": " << name[i] << endl;
 		}
 }
