@@ -23,25 +23,26 @@ bool YesORNo ()
 {
 	char Response;	
 	
-		while(true)
+	cout << "Do you want to play again? (Y or N): ";
+	cin >> Response;
+    cin.ignore (1000,10);
+	
+	
+	if (Response == 'N' || Response == 'n')
 		{
-			cout << "Do you want to play again? (Y or N): ";
-			cin >> Response;
-			cin.ignore (1000,10);
-	
-	
-			if (Response == 'N' || Response == 'n')
-				{
-					return false;
-				}
-	
-			else if (Response == 'Y' || Response == 'y') 
-				{
-					return true;
-				}
-	
-			else cout << "Invalid. \n"; 
+			return false;
 		}
+	
+	else if (Response == 'Y' || Response == 'y') 
+		{
+			return true;
+		}
+	
+	else 
+		{
+			cout << "Invalid. \n"; 
+		}
+
 		
 } // YesORNo
 
