@@ -61,9 +61,10 @@ int main()
   cout << "Compiled: " << __DATE__ << " at " << __TIME__ << endl << endl;
   
   int Guess;
-  char number[100];
+  char number[1000];
   string quit;
-
+while (true)
+{
   cout << "Hey, I'm trying to think of a number between 1-100! Try and guess what it is: ";
   
   while (true)
@@ -110,6 +111,6 @@ int main()
 	}
 		
  }// While true
-
  
 }
+}//end main
