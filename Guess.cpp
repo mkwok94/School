@@ -40,7 +40,8 @@ bool YesORNo ()
 	
 	else 
 		{
-			cout << "Invalid. \n"; 
+			cout << "Invalid, exiting \n"; 
+			return false;
 		}
 
 		
@@ -48,10 +49,6 @@ bool YesORNo ()
 
 int main()
 {
-  srand(time(0));
-  int compAnswer;
-  compAnswer = 1 + (rand() % 100);
-
   //Print my name and this assignment's title 
   cout << "Lab 4c, Basics of C and C++ Functions \n";
   cout << "Programmer: Melinda Kwok \n";
@@ -59,58 +56,61 @@ int main()
   cout << "Compiler(s) used: Visual Studio \n";
   cout << "File: " << __FILE__ << endl;
   cout << "Compiled: " << __DATE__ << " at " << __TIME__ << endl << endl;
+
+	while (true)
+	{
+		srand(time(0));
+  		int compAnswer;
+  		compAnswer = 1 + (rand() % 100);
+
+  		int Guess;
+  		char number[1000];
+  		string quit;
+  		
+  		cout << "Hey, I'm trying to think of a number between 1-100! Try and guess what it is: ";
   
-  int Guess;
-  char number[1000];
-  string quit;
-while (true)
-{
-  cout << "Hey, I'm trying to think of a number between 1-100! Try and guess what it is: ";
-  
-  while (true)
-  {	
-    cin >> number;
-	Guess = atoi(number);
-    cin.ignore (1000, 10);
+  		while (true)
+  		{	
+		    cin >> number;
+			Guess = atoi(number);
+		    cin.ignore (1000, 10);
  
-	//String quit will be stored in the array; this is so that we have an option to quit the program  
-    quit = number;
+			//String quit will be stored in the array; this is so that we have an option to quit the program  
+		    quit = number;
     
-	//If user input matches with strings options for quitting, program will end immiediately
-	if (quit == "Q" || quit == "q")
-	  {
-		break;
-	  }
-	
-	if (Guess > 100 || Guess < 1) 
-	  {
-		cout << "Your guess isn't between 1-100!!!";
-		continue;
-	  }
- 
-	if (Guess > compAnswer)
-	{
-		cout << "Boo, too high. Try again. ";
-	}
-	
-	if (Guess < compAnswer)
-	{
-		cout << "Awe, too low. Try again. ";
-	}
-	
-	if (compAnswer == Guess) 
-	{
-		cout << "You got it! The number I was thinking of was " << compAnswer << "!" << endl;
-		cout << endl;
-		
-		if (!YesORNo())
+			//If user input matches with strings options for quitting, program will end immiediately
+			if (quit == "Q" || quit == "q")
 			{
-				return 0;
+				break;
 			}
-	
-	}
 		
- }// While true
- 
+			if (Guess > 100 || Guess < 1) 
+		    {
+				cout << "Your guess isn't between 1-100!!!";
+				continue;
+		  	}
+	 
+			if (Guess > compAnswer)
+			{
+				cout << "Boo, too high. Try again. ";
+			}
+		
+			if (Guess < compAnswer)
+			{
+				cout << "Awe, too low. Try again. ";
+			}
+		
+			if (compAnswer == Guess) 
+			{
+				cout << "You got it! The number I was thinking of was " << compAnswer << "!" << endl;
+				cout << endl;
+				break;
+			}
+		}
+
+		if (!YesORNo())
+		{
+			return 0;
+		}
+	}		
 }
-}//end main
