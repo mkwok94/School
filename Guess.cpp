@@ -47,6 +47,12 @@ bool YesORNo ()
 		
 } // YesORNo
 
+int GetNumber () 
+{
+	srand(time(0));
+	return 1 + (rand() % 100);
+}
+
 int main()
 {
   //Print my name and this assignment's title 
@@ -60,8 +66,7 @@ int main()
 	while (true)
 	{
 		srand(time(0));
-  		int compAnswer;
-  		compAnswer = 1 + (rand() % 100);
+  		int compAnswer = GetNumber();
 
   		int Guess;
   		char number[1000];
