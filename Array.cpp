@@ -52,10 +52,10 @@ int main()
 
   //Says how many scores were entered
   cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
-  cout << "The average of the scores entered was " << 
-  cout.setf(ios::fixed|ios::showpoint);
-  cout << setprecision(1);
-  cout << getAverage(MAX_SCORE, score) << endl;
+  cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score) << endl;
+  //cout.setf(ios::fixed|ios::showpoint);
+  //cout << setprecision(1);
+  //cout << getAverage(MAX_SCORE, score) << endl;
  }
  
 int readArray (int MAX_SCORE, int score[])
@@ -88,16 +88,16 @@ int readArray (int MAX_SCORE, int score[])
 	return nScores;
  }
 
-double getAverage(int score, int n)
+double getAverage(int max_scores, int scores[])
 {
   double result = 0;
-  int sum = 0;
+  double sum = 0;
 		
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < max_scores; i++)
 	{
-	  sum += score[i]; 
+	  sum += scores[i]; 
 	}
 		
-  result = (double)sum/n;
+  result = sum / max_scores;
   return result;
 }
