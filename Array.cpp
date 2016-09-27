@@ -71,5 +71,5 @@ int main()
  
  readArray (int MAX_SCORE, int score[])
  {
-	 
+
  }
