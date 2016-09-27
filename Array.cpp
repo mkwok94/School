@@ -117,11 +117,10 @@ int readArray (int MAX_SCORE, int score[])
 	return nScores;
  }
 
-double getAverage(int max_scores, int scores[], int valid_numbers)
+double getAverage(int max_scores, int scores[], int nScores)
 {
   double result = 0;
   double sum = 0;
-  int nScores = 0;
 		
   for (int i = 0; i < max_scores; i++)
 	{
@@ -135,13 +134,14 @@ double getAverage(int max_scores, int scores[], int valid_numbers)
     return 0;
   }
 		
-  result = sum / valid_numbers;
+  result = sum / nScores;
   return result;
   
 }
 
 int stat(int nScores, int scores[], int &min, int &max, int &avg) 
 {
+  int max_scores;
   min = scores[0];
   for (int i = 1; i < nScores; i++)
   {
@@ -161,7 +161,7 @@ int stat(int nScores, int scores[], int &min, int &max, int &avg)
 	  }
   }	 // write code to set max to the actual max
 
-  avg = getAverage(max_scores, scores, valid_numbers); // write code to seet avg to the actual avg
+  avg = getAverage(max_scores, scores, nScores); // write code to set avg to the actual avg
 
   return 0;
 }
