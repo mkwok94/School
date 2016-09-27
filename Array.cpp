@@ -46,8 +46,13 @@ int main()
   for (int i = 0; i < MAX_SCORE; i++)
     {
 	  cin >> bufscore;
-	  score[i]= atoi(bufscore);
 	  
+          if (bufscore[0] == 'q' || bufscore[0] == 'Q') {
+		break;
+	  }
+
+	  score[i]= atoi(bufscore);
+
 	  //String quit will be stored in the array; this is so that we have an option to quit the program  
       bye = score[i];
 	  
