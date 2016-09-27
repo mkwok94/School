@@ -101,7 +101,12 @@ double getAverage(int max_scores, int scores[])
         sum += scores[i];
 		  }
 	}
+
+  if (sum == 0) {
+    return 0;
+  }
 		
-  result = sum / nScores;
+  result = sum / max_scores;
   return result;
+  
 }
