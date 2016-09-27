@@ -128,10 +128,8 @@ double getAverage(int max_scores, int scores[])
 	  if (scores[i] >= 0 && scores[i] < 101)
 	    {
 		  valid++;
+		  sum += scores[i];
 		}
-       
-	   sum += scores[i];
-		
 	}
 
   if (sum == 0) {
