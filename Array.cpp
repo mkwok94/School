@@ -92,12 +92,19 @@ double getAverage(int max_scores, int scores[])
 {
   double result = 0;
   double sum = 0;
+  int nScores = 0;
 		
   for (int i = 0; i < max_scores; i++)
 	{
+	  if (scores[i] >= 0 && scores[i] < 101)
+	    {
+		  //Counts score if it is non-negative
+		  nScores++;
+		}
+		
 	  sum += scores[i]; 
 	}
 		
-  result = sum / max_scores;
+  result = sum / nScores;
   return result;
 }
