@@ -66,8 +66,10 @@ int main()
   
   cout << "Number of scores put in: " << nScores << endl;
    //Says how many scores were entered
-   //cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
+   cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
  }
  
  readArray (int MAX_SCORE, int score[])
- //{}
+ {
+	 
+ }
