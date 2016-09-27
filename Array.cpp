@@ -142,13 +142,26 @@ double getAverage(int max_scores, int scores[], int valid_numbers)
 
 int stat(int nScores, int scores[], int &min, int &max, int &avg) 
 {
-  min = 1; // write code to set min to the actual min
+  min = scores[0];
+  for (int i = 1; i < nScores; i++)
+  {
+    if (min > scores[i])
+	  {
+		min = scores[i];
+	  }
+  }	  // write code to set min to the actual min
 
 
-  max = 2;  // write code to set max to the actual max
-  
+  max = scores[0]; 
+  for (int i = 1; i < nScores; i++)
+  {
+    if (max < scores[i])
+	  {
+		max = scores[i];
+	  }
+  }	 // write code to set max to the actual max
 
-  avg = 3; // write code to seet avg to the actual avg
+  avg = getAverage(max_scores, scores, valid_numbers); // write code to seet avg to the actual avg
 
   return 0;
 }
