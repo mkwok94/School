@@ -28,12 +28,6 @@ int readArray(int, int[]);
 double getAverage(int, int[], int);
 
 //Prototype
-int getMin(int, int[]);
-
-//Prototype
-int getMax(int, int[]);
-
-//Prototype
 int stat(int, int[], int&, int&, int&);
 
 int main()
@@ -146,16 +140,6 @@ double getAverage(int max_scores, int scores[], int valid_numbers)
   
 }
 
-int getMin(int max_scores, int scores[]) 
-{
-  return 0; // write code to replace this
-}
-
-int getMax(int max_scores, int scores[]) 
-{
-  return 0; // write code to replace this
-}
-
 int stat(int nScores, int scores[], int &min, int &max, int &avg) 
 {
   min = 1; // write code to set min to the actual min
@@ -165,6 +149,6 @@ int stat(int nScores, int scores[], int &min, int &max, int &avg)
   
 
   avg = 3; // write code to seet avg to the actual avg
-  
+
   return 0;
 }
