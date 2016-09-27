@@ -28,7 +28,13 @@ int readArray(int, int[]);
 double getAverage(int, int[], int);
 
 //Prototype
-int stat(int, const int[], int&, int&, int&);
+int getMin(int, int[]);
+
+//Prototype
+int getMax(int, int[]);
+
+//Prototype
+//int stat(int, const int[], int&, int&, int&);
 
 int main()
 {
@@ -57,24 +63,26 @@ int main()
   int valid_numbers = readArray(MAX_SCORE, score);
   cout << "The number of scores entered was " << valid_numbers << endl;
   
-  int minScore;
-  int maxScore;
-  int avgScore;
+  //int minScore;
+  //int maxScore;
+  //int avgScore;
   
-  if (stat(nScores, score, minScore, maxScore, avgScore) ==0)
-    {
-	  cout << "Minimum: " << minScore << endl;
-	  cout << "Maximum: " << maxScore << endl;
-	  cout << "Average Score: " << avgScore << endl;
-    }
+  //if (stat(nScores, score, minScore, maxScore, avgScore) ==0)
+  //  {
+	//  cout << "Minimum: " << minScore << endl;
+	//  cout << "Maximum: " << maxScore << endl;
+	//  cout << "Average Score: " << avgScore << endl;
+  //  }
 
-  else
-    {
-		cout << "No data can be found";
-	}
+  //else
+  //  {
+	//	cout << "No data can be found";
+	//}
   
   
-  //cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score, valid_numbers) << endl;
+  cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score, valid_numbers) << endl;
+  cout << "The min score was " << getMin(MAX_SCORE, score) << endl;
+  cout << "The max score was " << getMax(MAX_SCORE, score) << endl;
   //cout.setf(ios::fixed|ios::showpoint);
   //cout << setprecision(1);
   //cout << getAverage(MAX_SCORE, score) << endl;
@@ -110,7 +118,7 @@ int readArray (int MAX_SCORE, int score[])
 	return nScores;
  }
 
-/*double getAverage(int max_scores, int scores[], int valid_numbers)
+double getAverage(int max_scores, int scores[], int valid_numbers)
 {
   double result = 0;
   double sum = 0;
@@ -131,9 +139,19 @@ int readArray (int MAX_SCORE, int score[])
   result = sum / valid_numbers;
   return result;
   
-}*/
+}
 
-int stat(int nScores, int score, int minScore, int maxScore, int avgScore)
+int getMin(int max_scores, int scores[]) 
+{
+  return 0; // write code to replace this
+}
+
+int getMax(int max_scores, int scores[]) 
+{
+  return 0; // write code to replace this
+}
+
+/*int stat(int nScores, int score, int minScore, int maxScore, int avgScore)
 {
 	int max = score[0];
 
@@ -174,4 +192,4 @@ int stat(int nScores, int score, int minScore, int maxScore, int avgScore)
 		
   result = sum / valid_numbers;
   return result;
-}
+}*/
