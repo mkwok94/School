@@ -25,7 +25,10 @@ using std::string;
 int readArray(int, int[]);
 
 //Prototype
-double getAverage(int, int[]);
+double getAverage(int, int[], int);
+
+//Prototype
+int stat(int, const int[], int&, int&, int&);
 
 int main()
 {
@@ -53,7 +56,25 @@ int main()
   //Says how many scores were entered
   int valid_numbers = readArray(MAX_SCORE, score);
   cout << "The number of scores entered was " << valid_numbers << endl;
-  cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score, valid_numbers) << endl;
+  
+  int minScore;
+  int maxScore;
+  int avgScore;
+  
+  if (stat(nScores, score, minScore, maxScore, avgScore) ==0)
+    {
+	  cout << "Minimum: " << minScore << endl;
+	  cout << "Maximum: " << maxScore << endl;
+	  cout << "Average Score: " << avgScore << endl;
+    }
+
+  else
+    {
+		cout << "No data can be found";
+	}
+  
+  
+  //cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score, valid_numbers) << endl;
   //cout.setf(ios::fixed|ios::showpoint);
   //cout << setprecision(1);
   //cout << getAverage(MAX_SCORE, score) << endl;
@@ -89,7 +110,7 @@ int readArray (int MAX_SCORE, int score[])
 	return nScores;
  }
 
-double getAverage(int max_scores, int scores[], int valid_numbers)
+/*double getAverage(int max_scores, int scores[], int valid_numbers)
 {
   double result = 0;
   double sum = 0;
@@ -110,4 +131,47 @@ double getAverage(int max_scores, int scores[], int valid_numbers)
   result = sum / valid_numbers;
   return result;
   
+}*/
+
+int stat(int nScores, int score, int minScore, int maxScore, int avgScore)
+{
+	int max = score[0];
+
+	
+	for (int i = 1; i < nScores; i++)
+	{
+		if (max < score[i])
+		{
+			max = score[i];
+		}
+	}
+
+
+	int min = score[0];
+	for (int i = 1; i < nScores; i++)
+	{
+		if (min > score[i])
+		{
+			min = score[i];
+		}
+	}
+	
+  double result = 0;
+  double sum = 0;
+  int nScores = 0;
+		
+  for (int i = 0; i < max_scores; i++)
+	{
+	  if (scores[i] >= 0 && scores[i] < 101)
+	    {
+        sum += scores[i];
+		  }
+	}
+
+  if (sum == 0) {
+    return 0;
+  }
+		
+  result = sum / valid_numbers;
+  return result;
 }
