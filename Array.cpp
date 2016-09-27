@@ -61,7 +61,7 @@ int main()
   int maxScore = 0;
   int avgScore = 0;
   
-  int returnValue = stat(valid_numbers, score, minScore, maxScore, avgScore);
+  int returnValue = stat(MAX_SCORE, score, minScore, maxScore, avgScore);
   cout << "Min score: " << minScore << endl;
   cout << "Max score: " << maxScore << endl;
   cout << "Avg score: " << avgScore << endl;
@@ -128,10 +128,8 @@ double getAverage(int max_scores, int scores[])
 	  if (scores[i] >= 0 && scores[i] < 101)
 	    {
 		  valid++;
+      sum += scores[i];
 		}
-       
-	   sum += scores[i];
-		
 	}
 
   if (sum == 0) {
