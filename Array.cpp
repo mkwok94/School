@@ -69,5 +69,5 @@ int main()
    //cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
  }
  
- //readArray (int MAX_SCORE, int score[])
+ readArray (int MAX_SCORE, int score[])
  //{}
