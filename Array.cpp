@@ -17,7 +17,7 @@ using std::endl;
 using std::string;
 
 //Prototype
-//int readArray(int, int[]);
+int readArray(int, int[]);
 
 int main()
 {
@@ -31,7 +31,7 @@ int main()
   
   //Max # of scores that user can enter
   const int MAX_SCORE = 10;
-  //Create storage for up to 50 scores
+  //Create storage for up to 10 scores
   int score[MAX_SCORE];
   //Count number of scores entered
   int nScores = 0;
@@ -46,15 +46,10 @@ int main()
   for (int i = 0; i < MAX_SCORE; i++)
     {
 	  cin >> bufscore;
-	  
-          if (bufscore[0] == 'q' || bufscore[0] == 'Q') {
-		break;
-	  }
-
 	  score[i]= atoi(bufscore);
-
+	  
 	  //String quit will be stored in the array; this is so that we have an option to quit the program  
-      bye = score[i];
+      bye = bufscore;
 	  
 	  //If user input matches with strings options for quitting, program will end immiediately
 	  if (bye == "Q" || bye == "q")
