@@ -34,7 +34,7 @@ int getMin(int, int[]);
 int getMax(int, int[]);
 
 //Prototype
-//int stat(int, const int[], int&, int&, int&);
+int stat(int, int[], int&, int&, int&);
 
 int main()
 {
@@ -63,10 +63,15 @@ int main()
   int valid_numbers = readArray(MAX_SCORE, score);
   cout << "The number of scores entered was " << valid_numbers << endl;
   
-  //int minScore;
-  //int maxScore;
-  //int avgScore;
+  int minScore = 0;
+  int maxScore = 0;
+  int avgScore = 0;
   
+  int returnValue = stat(valid_numbers, score, minScore, maxScore, avgScore);
+  cout << "Min score: " << minScore << endl;
+  cout << "Max score: " << maxScore << endl;
+  cout << "Avg score: " << avgScore << endl;
+
   //if (stat(nScores, score, minScore, maxScore, avgScore) ==0)
   //  {
 	//  cout << "Minimum: " << minScore << endl;
@@ -80,9 +85,9 @@ int main()
 	//}
   
   
-  cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score, valid_numbers) << endl;
-  cout << "The min score was " << getMin(MAX_SCORE, score) << endl;
-  cout << "The max score was " << getMax(MAX_SCORE, score) << endl;
+  //cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score, valid_numbers) << endl;
+  //cout << "The min score was " << getMin(MAX_SCORE, score) << endl;
+  //cout << "The max score was " << getMax(MAX_SCORE, score) << endl;
   //cout.setf(ios::fixed|ios::showpoint);
   //cout << setprecision(1);
   //cout << getAverage(MAX_SCORE, score) << endl;
@@ -151,45 +156,15 @@ int getMax(int max_scores, int scores[])
   return 0; // write code to replace this
 }
 
-/*int stat(int nScores, int score, int minScore, int maxScore, int avgScore)
+int stat(int nScores, int scores[], int &min, int &max, int &avg) 
 {
-	int max = score[0];
-
-	
-	for (int i = 1; i < nScores; i++)
-	{
-		if (max < score[i])
-		{
-			max = score[i];
-		}
-	}
+  min = 1; // write code to set min to the actual min
 
 
-	int min = score[0];
-	for (int i = 1; i < nScores; i++)
-	{
-		if (min > score[i])
-		{
-			min = score[i];
-		}
-	}
-	
-  double result = 0;
-  double sum = 0;
-  int nScores = 0;
-		
-  for (int i = 0; i < max_scores; i++)
-	{
-	  if (scores[i] >= 0 && scores[i] < 101)
-	    {
-        sum += scores[i];
-		  }
-	}
+  max = 2;  // write code to set max to the actual max
+  
 
-  if (sum == 0) {
-    return 0;
-  }
-		
-  result = sum / valid_numbers;
-  return result;
-}*/
+  avg = 3; // write code to seet avg to the actual avg
+  
+  return 0;
+}
