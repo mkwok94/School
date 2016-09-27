@@ -51,8 +51,9 @@ int main()
   cout << "Enter up to 50 numbers to be stored! If you wanna quit, type Q or q at any time! ";
 
   //Says how many scores were entered
-  cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
-  cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score) << endl;
+  int valid_numbers = readArray(MAX_SCORE, score);
+  cout << "The number of scores entered was " << valid_numbers << endl;
+  cout << "The average of the scores entered was " << getAverage(MAX_SCORE, score, valid_numbers) << endl;
   //cout.setf(ios::fixed|ios::showpoint);
   //cout << setprecision(1);
   //cout << getAverage(MAX_SCORE, score) << endl;
@@ -88,7 +89,7 @@ int readArray (int MAX_SCORE, int score[])
 	return nScores;
  }
 
-double getAverage(int max_scores, int scores[])
+double getAverage(int max_scores, int scores[], int valid_numbers)
 {
   double result = 0;
   double sum = 0;
@@ -106,7 +107,7 @@ double getAverage(int max_scores, int scores[])
     return 0;
   }
 		
-  result = sum / max_scores;
+  result = sum / valid_numbers;
   return result;
   
 }
