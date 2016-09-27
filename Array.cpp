@@ -41,8 +41,18 @@ int main()
   string bye;
   
   cout << "Enter up to 50 numbers to be stored! If you wanna quit, type Q or q at any time! ";
+
+   //Says how many scores were entered
+   cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
+ }
+ 
+int readArray (int MAX_SCORE, int score[])
+ {
+	int nScores = 0;
+	char bufscore[100];
   
-  //Read scores from keyboard, space and/or newline delimited
+    string bye;
+    //Read scores from keyboard, space and/or newline delimited
   for (int i = 0; i < MAX_SCORE; i++)
     {
 	  cin >> bufscore;
@@ -63,13 +73,4 @@ int main()
 		  nScores++;
 		}
     }
-  
-  cout << "Number of scores put in: " << nScores << endl;
-   //Says how many scores were entered
-   cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
- }
- 
- readArray (int MAX_SCORE, int score[])
- {
-
  }
