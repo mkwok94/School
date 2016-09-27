@@ -141,11 +141,10 @@ double getAverage(int max_scores, int scores[])
   
 }
 
-int stat(int nScores, int scores[], int &min, int &max, int &avg) 
+int stat(int max_scores, int scores[], int &min, int &max, int &avg) 
 {
-  int max_scores;
   min = scores[0];
-  for (int i = 1; i < nScores; i++)
+  for (int i = 1; i < max_scores; i++)
   {
     if (min > scores[i])
 	  {
@@ -155,7 +154,7 @@ int stat(int nScores, int scores[], int &min, int &max, int &avg)
 
 
   max = scores[0]; 
-  for (int i = 1; i < nScores; i++)
+  for (int i = 1; i < max_scores; i++)
   {
     if (max < scores[i])
 	  {
