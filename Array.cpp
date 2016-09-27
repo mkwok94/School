@@ -55,7 +55,7 @@ int main()
   cout << "The average of the scores entered was " << 
   cout.setf(ios::fixed|ios::showpoint);
   cout << setprecision(1);
-  cout << getAverage(MAX_SCORE, score) << endl;
+  cout << getAverage(nScores, score) << endl;
  }
  
 int readArray (int MAX_SCORE, int score[])
@@ -88,16 +88,16 @@ int readArray (int MAX_SCORE, int score[])
 	return nScores;
  }
 
-double getAverage(int score, int n)
+double getAverage(int nScores, int score)
 {
   double result = 0;
   int sum = 0;
 		
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < score; i++)
 	{
 	  sum += score[i]; 
 	}
 		
-  result = (double)sum/n;
+  result = (double)sum/score;
   return result;
 }
