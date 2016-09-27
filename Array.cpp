@@ -6,11 +6,16 @@
 //This library is for the buffer
 #include <cstdlib>
 
+//This library is for set precision 
+#include <iomanip>
+using std::setprecision;
+
 //This library is for getting inputs and outputting
 #include <iostream>
 using std::cin;
 using std::cout;
 using std::endl;
+using std::ios;
 
 //This library is so the compiler can read strings
 #include <string>
@@ -18,6 +23,9 @@ using std::string;
 
 //Prototype
 int readArray(int, int[]);
+
+//Prototype
+double getAverage(int, int[]);
 
 int main()
 {
@@ -42,8 +50,12 @@ int main()
   
   cout << "Enter up to 50 numbers to be stored! If you wanna quit, type Q or q at any time! ";
 
-   //Says how many scores were entered
-   cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
+  //Says how many scores were entered
+  cout << "The number of scores entered was " << readArray(MAX_SCORE, score) << endl;
+  cout << "The average of the scores entered was " << 
+  cout.setf(ios::fixed|ios::showpoint);
+  cout << setprecision(1);
+  cout << getAverage(MAX_SCORE, score) << endl;
  }
  
 int readArray (int MAX_SCORE, int score[])
@@ -53,7 +65,7 @@ int readArray (int MAX_SCORE, int score[])
   
     string bye;
     //Read scores from keyboard, space and/or newline delimited
-  for (int i = 0; i < MAX_SCORE; i++)
+    for (int i = 0; i < MAX_SCORE; i++)
     {
 	  cin >> bufscore;
 	  score[i]= atoi(bufscore);
@@ -73,4 +85,19 @@ int readArray (int MAX_SCORE, int score[])
 		  nScores++;
 		}
     }
+	return nScores;
  }
+
+double getAverage(int score, int n)
+{
+  double result = 0;
+  int sum = 0;
+		
+  for (int i = 0; i < n; i++)
+	{
+	  sum += score[i]; 
+	}
+		
+  result = (double)sum/n;
+  return result;
+}
