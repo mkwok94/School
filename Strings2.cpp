@@ -79,12 +79,14 @@ int main()
   cout << endl;
   
   //This is for the Uppercase Function
-  //It shows the 
+  //It shows the original string and then the new version as it is made in all uppercase letters
   cout << "Original String: " << a << endl;
   myStrUpr(a);
   cout << "Uppercase Version: " << a << endl;
   cout << endl;
   
+  //This is for the Lowercase Function
+  //It shows the original string and then the new version as it is made in all lowercase letters
   cout << "Original String: " << b << endl;
   myStrLwr(b);
   cout << "Lowercase Version: " << b << endl;
@@ -165,7 +167,12 @@ int myStrCmp(const char* a, const char* b)
 //String Swap Function
 void myStrSwap(char* a, char* b)
 { 
-  
+  /*Write a C function to swap the contents of two C strings, using this function prototype:
+void myStrSwap(char*, char*);
+
+Swap each char value in the parameter C strings until the null terminator of the longer string is swapped. 
+Do not use <cstring>'s strlen(), strcmp(), or strcpy() functions in your program -- you are to write your function using loops to process the char arrays. 
+Do not use pointers -- use array syntax instead. Do not use more than one loop in the function.*/
   
 }//End of String Swap Function
 
