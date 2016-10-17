@@ -15,7 +15,7 @@ using std::endl;
 //This library is so the compiler can read strings
 #include <string>
 
-#include <utility> 
+#include <algorithm> 
 using std::swap;
 
 //Prototype for Copy String Function
@@ -174,9 +174,12 @@ Swap each char value in the parameter C strings until the null terminator of the
 Do not use <cstring>'s strlen(), strcmp(), or strcpy() functions in your program -- you are to write your function using loops to process the char arrays. 
 Do not use pointers -- use array syntax instead. Do not use more than one loop in the function.*/
 
-  for (int i = 0; i != '\0'; i++)
+  int i = 0;
+
+  while (i != '\0')
     {
 	  swap(a[i], b[i]);
+	  i++;
 	}
   
 }//End of String Swap Function
