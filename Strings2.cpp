@@ -72,7 +72,7 @@ int main()
   cout << "String 2: " << d << endl;
   cout << "SWAP!" << endl;
   
-  //myStrSwap(c, d);
+  myStrSwap(c, d);
   
   cout << "String 1: " << c << endl;
   cout << "String 2: " << d << endl;
@@ -173,6 +173,11 @@ void myStrSwap(char*, char*);
 Swap each char value in the parameter C strings until the null terminator of the longer string is swapped. 
 Do not use <cstring>'s strlen(), strcmp(), or strcpy() functions in your program -- you are to write your function using loops to process the char arrays. 
 Do not use pointers -- use array syntax instead. Do not use more than one loop in the function.*/
+
+  for (int i = 0; i != '\0'; i++)
+    {
+	  swap(a[i], b[i]);
+	}
   
 }//End of String Swap Function
 
