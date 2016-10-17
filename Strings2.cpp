@@ -176,9 +176,12 @@ Do not use pointers -- use array syntax instead. Do not use more than one loop i
 
   int i = 0;
 
-  while (i != '\0')
+  while (true)
     {
-	  swap(a[i], b[i]);
+	  if ( i != '\0')
+	  {
+		  swap(a[i], b[i]);
+	  }
 	  i++;
 	}
   
